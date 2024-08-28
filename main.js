@@ -4,15 +4,14 @@ let aside = document.querySelector(".aside");
 let hLinks = document.querySelectorAll(".h-links");
 let h = document.querySelectorAll(".h1");
 let grey = document.querySelectorAll(".grey")
-let header = document.querySelector(".header")
-
+let header = document.querySelector(".header");
+let switchBtn = document.querySelector(".switch");
 
 
 btn.addEventListener("click",(e)=>{
-    if(e.target.innerHTML === "Light Mode"){
-        btn.style.color = "white";
-        btn.style.backgroundColor = "black"
-        e.target.innerHTML = "Dark Mode";
+    console.log(switchBtn.innerHTML);
+    if(switchBtn.innerHTML === "dark"){
+        btn.style.backgroundColor = "grey";
         grey.forEach((val)=>{
             val.style.backgroundColor = "rgb(254 212 161 / 69%)"
         })
@@ -22,12 +21,12 @@ btn.addEventListener("click",(e)=>{
         hLinks.forEach((val)=>{
             val.style.color = "black";
         })
-        header.style.backgroundColor = "papayawhip";
+        // header.style.backgroundColor = "papayawhip";
+        switchBtn.innerHTML = "light";
         
     }
     else{
-        e.target.innerHTML = "Light Mode";
-        btn.style.color = "black";
+        switchBtn.innerHTML = "dark";
         btn.style.backgroundColor = "white"
         grey.forEach((val)=>{
             val.style.backgroundColor = "rgb(30, 30, 30,0.817)"
@@ -38,9 +37,9 @@ btn.addEventListener("click",(e)=>{
         hLinks.forEach((val)=>{
             val.style.color = "white";
         })
-        header.style.backgroundColor = "black";
+        // header.style.backgroundColor = "black";
     }
-    console.log(e.target.innerHTML);
+    header.classList.toggle("header-light");
     body.classList.toggle("light-mode");
     aside.classList.toggle("aside-light");
     
