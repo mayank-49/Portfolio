@@ -131,7 +131,6 @@ p{
     align-items: center;
     position: fixed;
     border-bottom: 2px solid white;
-    animation: top 2s ease forwards;
 }
 .header-light{
     background-color: papayawhip;
